@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p>Enter your name</p> 
+        <input type="text" id="inputElement" />
+        <p>Enter password</p> 
+        <input type="password" /> </br></br>
+        <button onclick="signIn()">Sign In</button>
+        <h1 id="signInElement"></h1>
+
+     
+        <script>
+            let inputElement = document.getElementById("inputElement");
+            let signInElement = document.getElementById("signInElement");
+
+            function signIn(){
+               
+                let inputvalue = inputElement.value;
+
+                let verifiedText = "Hi!"+inputvalue+", verifying your account..";
+
+                signInElement.textContent = verifiedText;
+                signInElement.style.color="green"      
+
+            }
+          
+        </script>
+      
+    </body>
+</html>
+
