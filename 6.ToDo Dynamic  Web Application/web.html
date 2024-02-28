@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightcyan
+        }
+
+        #todo-container {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        #todo-list {
+            list-style: none;
+            padding: 50;
+        }
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid green;
+            margin-bottom: 5px;
+        }
+
+        button{
+            color: blue;
+
+        }
+
+        .todo-item button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        h2{
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+
+<div id="todo-container">
+    <h2>TO-DO List</h2>
+    <ul id="todo-list"></ul>
+    <div>
+        <input type="text" id="todo-input" placeholder="Add a new task">
+        <button onclick="addTodo()">Add</button>
+        <button onclick="clearAll()">Clear All</button>
+    </div>
+</div>
+
+<script>
+
+    const todoList = document.getElementById('todo-list');
+    const todoInput = document.getElementById('todo-input');
+
+
+    function addTodo() {
+        const task = todoInput.value.trim();
+        if (task !== '') {
+            const listItem = document.createElement('li');
+            listItem.className = 'todo-item';
+            listItem.innerHTML = `
+                <span>${task}</span>
+                <button onclick="removeTodo(this)">Remove</button>
+            `;
+            todoList.appendChild(listItem);
+            todoInput.value = '';
+        }
+    }
+
+    
+    function removeTodo(button) {
+        const listItem = button.parentElement;
+        todoList.removeChild(listItem);
+    }
+
+    
+    function clearAll() {
+        todoList.innerHTML = '';
+    }
+</script>
+
+</body>
+</html>
