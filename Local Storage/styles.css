@@ -1,0 +1,42 @@
+
+body{
+    background-color: #326254;
+    padding:30px;
+    height:100vh;
+}
+.heading{
+ 
+    font-family: "Robot";
+    font-weight: 500;
+    font-size: 36px;
+    color: white ;
+    text-align: center;
+    margin-bottom:  20px;
+
+
+}
+
+.pheading{
+ 
+    font-family: "Robot";
+    font-weight: 500;
+    font-size: 18px;
+    color: lightgreen;
+    text-align: center;
+    margin-bottom:  20px;
+    
+
+
+}
+
+.taheading{
+    margin-left:  25px;
+
+}
+
+.btnheading{
+    margin-left:  200px;
+    color:white;
+    background-color: darkgoldenrod ;
+
+}
