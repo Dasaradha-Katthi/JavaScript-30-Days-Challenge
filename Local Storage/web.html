@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Local Storage</title>
+<link rel="stylesheet" href="localStorage.css">
+</head>
+<body>
+<h1 class="heading">Local Storage Example</h1>
+<p class="pheading">Enter Any Message</p>
+<textarea class="taheading"  rows="8" cols="55" id="textareaElement"></textarea>
+</br></br>
+<button id="btnElement" class="btnheading" >Save</button>
+
+<script>
+let textareaEl = document.getElementById("textareaElement");
+let btnEl = document.getElementById("btnElement");
+btnEl.onclick = function(){
+  
+
+    let useripText = textareaEl.val;
+    localStorage.setItem("userEnteredText", useripText);
+    
+
+}
+let suipval = localStorage.getItem("userEnteredText");
+if (suipval === null){
+    textareaEl.val = " ";
+
+}
+else{
+    textareaEl.val = suipval;
+}
+
+
+    localStorage.setItem("key", "Hi, this is an example for Local Storage");
+
+
+
+</script>
+
+
+</body>
+</html>
