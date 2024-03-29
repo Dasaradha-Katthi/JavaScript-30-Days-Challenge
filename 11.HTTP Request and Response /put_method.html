@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+    let data = {
+
+        name: "Rahul Atluri",
+
+        gender: 'Female'
+
+       
+
+    };
+
+let options={
+
+    method: 'PUT',
+
+    headers: {
+
+        'Content-Type': 'application/json',
+
+        Accept: 'application/json',
+
+        Authorization: 'Bearer 32f4534e8a0b9b6d6691bef3ec65462b23392fe0cf3e61fd12291bc658a2e4a0'
+    },
+
+    body: JSON.stringify(data)
+};
+
+let url="https://gorest.co.in/public-api/users/6813108";
+
+fetch(url, options)
+
+ .then(function(response){
+
+    return response.json();
+})
+ .then(function(jsonData){
+    console.log(jsonData);
+ });
+
+
+</script>
+
+    
+</body>
+</html>
